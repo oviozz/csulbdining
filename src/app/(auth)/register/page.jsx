@@ -125,7 +125,7 @@ export default function Register() {
                                     <div className="px-4 py-6 md:mx-6 md:p-12">
                                         <h4 className="mb-6 text-5xl font-bold">Our mission</h4>
                                         <p className="text-l font-semibold">
-                                            At CSULBDining, we're dedicated to helping dorming students stay informed about their dining options. Our goal is to provide easy access to meal cycles, menus, and reviews, fostering a community where students can make informed choices and share their dining experiences.
+                                            {"At CSULBDining, we're dedicated to helping dorming students stay informed about their dining options. Our goal is to provide easy access to meal cycles, menus, and reviews, fostering a community where students can make informed choices and share their dining experiences."}
                                         </p>
                                     </div>
                                 </div>
