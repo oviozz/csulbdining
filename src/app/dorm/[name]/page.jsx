@@ -16,7 +16,7 @@ export default function DormMenu({ params, searchParams }) {
     const cycleData = getNumberFromDate(searchParams);
     const getDay = getDayOfWeek(searchParams?.date)
 
-    const dormData = cycleData[`${getDay}`][`${dormName}`]
+    const dormData = cycleData[`Monday`][`${dormName}`]
 
 
     return (
