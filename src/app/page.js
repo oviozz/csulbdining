@@ -24,7 +24,6 @@ const Home = async () => {
 
     const dormRatings = await getAllDromRating();
 
-    console.log(dormRatings.dorms["Hillside Village"])
     return (
         <div className={""}>
 

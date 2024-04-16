@@ -2,6 +2,7 @@
 import connectDB from "@/lib/dbConnect";
 import Review from "@/models/Review";
 import {NextResponse} from "next/server";
+import User from "@/models/User";
 
 export const GET = async (_, {params}) => {
 
@@ -10,8 +11,10 @@ export const GET = async (_, {params}) => {
     const dorm = decodeURIComponent(params.slug[0]);
     const name = decodeURIComponent(params.slug[1]);
 
-    console.log(name)
+
     try {
+
+        await User.ensureIndexes()
 
         const reviews = await Review.find({
             $and: [
