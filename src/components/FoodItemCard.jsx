@@ -19,20 +19,20 @@ async function getData(value) {
     return await res.json()
 }
 
-async function getImageData(foodName) {
-    if (foodName.trim() === ""){
-        return;
-    }
-
-    const res = await fetch(`https://www.googleapis.com/customsearch/v1?q=${foodName}&key=${process.env.API_KEY}&cx=${process.env.SEARCH_ENGINE_ID}&searchType=image&image_size=large`, {
-        method: 'GET',
-    })
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-    return await res.json()
-}
+// async function getImageData(foodName) {
+//     if (foodName.trim() === ""){
+//         return;
+//     }
+//
+//     const res = await fetch(`https://www.googleapis.com/customsearch/v1?q=${foodName}&key=${process.env.API_KEY}&cx=${process.env.SEARCH_ENGINE_ID}&searchType=image&image_size=large`, {
+//         method: 'GET',
+//     })
+//
+//     if (!res.ok) {
+//         throw new Error('Failed to fetch data')
+//     }
+//     return await res.json()
+// }
 
 export default async function FoodItemCard({dormName, item}){
 
@@ -41,13 +41,15 @@ export default async function FoodItemCard({dormName, item}){
     const items = await getData(cleanIngredientName(item))
     const {calories} = mergeItems(items)
 
-    const imgURL = await getImageData(cleanIngredientName(item));
+    // const imgURL = await getImageData(cleanIngredientName(item));
 
     return (
         <Link href={`${dormName}/review/${cleanIngredientName(item)}`} className={"flex flex-col gap-2"}>
 
             <div className={"relative"}>
-                <img src={imgURL['items'][1]['link']} className={"bg-gray-200 rounded-md w-full object-cover transition duration-500 h-[250px]"}  alt={item}/>
+                {/*<img src={imgURL['items'][1]['link']} className={"bg-gray-200 rounded-md w-full object-cover transition duration-500 h-[250px]"}  alt={item}/>*/}
+                <div className={"bg-gray-200 rounded-md w-full object-cover transition duration-500 h-[250px]"} />
+
                 <span className={"absolute top-3 right-2 bg-white px-2 rounded-lg font-semibold shadow"}>{`🔥 ${roundToInteger(calories)} calories`}</span>
 
             </div>
