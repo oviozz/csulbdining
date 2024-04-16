@@ -44,7 +44,7 @@ export default async function FoodItemCard({dormName, item}){
     const imgURL = await getImageData(cleanIngredientName(item));
 
     return (
-        <Link href={`${dormName}/review/${cleanIngredientName(item)}`} className={"flex flex-col gap-2"}>
+        <Link href={`/${dormName}/review/${cleanIngredientName(item)}`} className={"flex flex-col gap-2"}>
 
             <div className={"relative"}>
                 <img src={imgURL['items'][1]['link']} className={"bg-gray-200 rounded-md w-full object-cover transition duration-500 h-[250px]"}  alt={item}/>
