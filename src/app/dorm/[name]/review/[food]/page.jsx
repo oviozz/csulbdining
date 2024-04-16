@@ -45,11 +45,8 @@ export default async function ReviewPage({params}) {
 
     const foodName = cleanIngredientName(decodeURIComponent(params.food))
     const dormName = decodeURIComponent(params.name);
-
-    const [items, imgURL] = await Promise.all([
-        await getFoodDetails(foodName),
-        await getImageData(foodName)
-    ])
+    const items = await getFoodDetails(foodName)
+    const imgURL = await getImageData(foodName);
 
     const tableFoodDetails = mergeItems(items)
 
