@@ -30,7 +30,7 @@ export default function DormMenu({ params, searchParams }) {
                     <h1 className="text-2xl  font-semibold mb-5 px-2 py-1 rounded-sm">🍳 Breakfast</h1>
 
                     <ul className={"grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
-                        {dormData && dormData.Breakfast && dormData.Breakfast.Items.map((item, index) => (
+                        {dormData && dormData?.Breakfast && dormData?.Breakfast?.Items.map((item, index) => (
                             <FoodItemCard dormName={dormName} item={item} key={index} />
                         ))}
                     </ul>
@@ -40,7 +40,7 @@ export default function DormMenu({ params, searchParams }) {
                     <h1 className="text-2xl font-semibold mb-5 px-2 py-1 rounded-sm">🥪 Lunch</h1>
 
                     <ul className={"grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
-                        {dormData && dormData.Lunch && dormData.Lunch.Items.map((item, index) => (
+                        {dormData && dormData?.Lunch && dormData?.Lunch?.Items.map((item, index) => (
                             <FoodItemCard dormName={dormName} item={item} key={index} />
                         ))}
                     </ul>
@@ -50,7 +50,7 @@ export default function DormMenu({ params, searchParams }) {
                     <h1 className="text-2xl font-semibold mb-5 px-2 py-1 rounded-sm">🍔 Dinner</h1>
 
                     <ul className={"grid gap-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"}>
-                        {dormData && dormData.Dinner && dormData.Dinner.Items.map((item, index) => (
+                        {dormData && dormData?.Dinner && dormData?.Dinner.Items.map((item, index) => (
                             <FoodItemCard dormName={dormName} item={item} key={index} />
                         ))}
                     </ul>
